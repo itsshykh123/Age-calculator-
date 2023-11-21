@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Age Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Age Calculator</h2>
+
+  <label for="birthdate">Enter your birthdate:</label>
+  <input type="date" id="birthdate">
+
+  <button onclick="calculateAge()">Calculate Age</button>
+
+  <p id="result"></p>
+
+  <script>
+    function calculateAge() {
+      
+      var birthdate = document.getElementById('birthdate').value;
+
+      
+      var birthDateObj = new Date(birthdate);
+
+    
+      var currentDate = new Date();
+
+    
+      var timeDiff = currentDate - birthDateObj;
+
+      
+      var age = Math.floor(timeDiff / (365.25 * 24 * 60 * 60 * 1000));
+
+    
+      document.getElementById('result').innerHTML = 'Your age is: ' + age + ' years';
+    }
+  </script>
+
+</body>
+</html>
